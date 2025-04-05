@@ -1,0 +1,21 @@
+.table {
+    width: 600px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+.linhafirst {
+    background-color: #0D5188;
+    color: white; 
+}
+.linhasecond {
+    background-color: #66C5E3;
+    color: black;
+}
+.linhathird {
+    background-color: #C7E7F3;
+    color: #0D5188;
+}
+.linhafour {
+    background-color: silver;
+    color: black;
+}
