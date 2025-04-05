@@ -1,0 +1,96 @@
+.table {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px;
+    color: #DDDDDD;
+    width: 500px;
+}
+.legenda {
+    text-align: center;
+    color: #CCCCCC;
+    width: 10%;
+}
+.tresprimeiros {
+    color: #003366;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+.quartalinha{
+    color: #1398be;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+.cincoaodoze {
+    color: #DE9800;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+.trezeaodezesseis {
+    color: #CCCCCC;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+.dezesseteaovinte {
+    color: #C91B04;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+.times {
+    font-size: 14px;
+    color: #666666;
+    font-weight: bold;
+    text-align: left;
+    width:10%;
+}
+.points {
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    background-color: #f7f7f7;
+    width:10%;
+}
+.demaiscolunas {
+    font-size: 14px;
+    color: #666666;
+    text-align: center;
+    width:10%;
+}
+.colunacomcor {
+    font-size: 14px;
+    color: #666666;
+    text-align: center;
+    background-color: #f7f7f7;
+    width:10%;
+}
+td, th {
+    border-bottom: 1px solid #DDDDDD;
+}
+tr:nth-child(5) td{
+    border-bottom: 2px solid #CCCCCC;
+}
+tr:nth-child(17) td{
+    border-bottom: 2px solid #CCCCCC;
+}
+.classific {
+    width: 10px;
+    color: #8F8F8F;
+    text-align: left;
+    font-size: 10px;
+}
+.classific2 {
+    width: 10px;
+    color: #555555;
+    text-align: left;
+    font-size: 10px;
+}
+.classific3 {
+    width: 10px;
+    color: #555555;
+    text-align: left;
+    font-size: 10px;
+}
