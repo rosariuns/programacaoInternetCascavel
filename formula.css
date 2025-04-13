@@ -8,7 +8,8 @@ body {
 .letracomcor {
     color: white;
 }
-.letracomcorpreta {
+
+.letracomcorpreta2{
     color: black;
 }
 header {
@@ -63,7 +64,7 @@ ol {
     padding-left: 20px;
 }
 .minilogo {
-    width: 20px;
+    width: 40px;
     height: auto;
     margin-right: 10px;
     vertical-align: middle;
@@ -81,4 +82,52 @@ footer ul {
 }
 footer li {
     margin: 5px 0;
+}
+
+.flag{
+    max-width: 30px;
+    max-height: 25px;
+
+}
+.nume{
+    text-align: center;
+}
+.nomesPL{
+    text-align: center;
+}
+.minilogo2 {
+    width: 60px;
+    height: 40px;
+    vertical-align: middle;
+    border-radius: 7px;
+    border-style: outset;
+    border-bottom: #0d0d0d;
+    border-color:#1a1a1a;
+    
+}
+.container{
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 1000px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 0 100px rgba(255, 0, 0, 0.4);
+}
+.titulos{
+    text-align: center;
+    color: #ff0000;
+}
+
+.NomeT{
+    text-align: center;
+    color: #ffffff;
+}
+
+.tr {
+    text-align:center;
+}
+
+.letracomcorpreta{
+    color: #0d0d0d;
+    text-align: center;
 }
