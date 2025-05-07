@@ -50,9 +50,57 @@ let btreajuste = document.querySelector("#btreajuste");
 let imprimir = document.querySelector("#imprimir");
 
 btreajuste.onclick = function() {
-    let saldo1 = parseFloat(inputNumber1.value);
+    let saldo1 = parseFloat(inputsaldo1.value);
 
-    let reajuste = saldo1 * 1/100;
-    imprimir.textContent = `o saldo com reajuste é de = R$ ${imprimir.toFixed(2)}`;
+    let reajuste = saldo1 * 0.01;
+    let saldoFinal = saldo1 + reajuste;
+    imprimir.textContent = `O saldo com reajuste é de R$ ${saldoFinal.toFixed(2)}`;
+
     
+}
+
+//atividade 4
+let inputprimeiro = document.querySelector("#primeiro");
+let inputsegundo = document.querySelector("#segundo");
+let inputterceiro = document.querySelector("#terceiro");
+let btcalcular = document.querySelector("#btcalcular");
+let imprint = document.querySelector("#imprint");
+
+btcalcular.onclick = function (){
+let primeiro = parseFloat(inputprimeiro.value);
+let segundo = parseFloat(inputsegundo.value);
+let terceiro = parseFloat(inputterceiro.value);
+
+
+    let aritmetica = (primeiro + segundo + terceiro)/3;
+    let ponderada = (primeiro * 1 + segundo * 2 + terceiro * 3) / (1 + 2 + 3); 
+    let soma = aritmetica + ponderada;
+    let media = soma/2;
+
+    imprint.innerHTML = 
+    `A média aritmética dos números é: ${aritmetica.toFixed(2)}<br>` +
+    `A média ponderada dos números é: ${ponderada.toFixed(2)} <br>` +
+    `A soma das duas médias é: ${soma.toFixed(2)} <br>` +
+    `A média das médias é: ${media.toFixed(2)}`;
+}
+
+//atividade 5
+let inputprimeirovalor = document.querySelector("#primeirovalor");
+let inputsegundovalor = document.querySelector("#segundovalor");
+let btcalcule = document.querySelector("#btcalcule");
+let calcule = document.querySelector("#calcule");
+
+btcalcule.onclick = function (){
+    let primeirovalor = parseFloat(inputprimeirovalor.value);
+    let segundovalor = parseFloat(inputsegundovalor.value);
+
+    if (primeirovalor > segundovalor) {
+        maior.textContent = `o valor maior é: ${primeirovalor}`;
+
+    } else if (segundovalor > primeirovalor) {
+        maior.textContent = `o valor maior é: ${segundovalor}`;
+    
+    } else {
+        maior.textContent = `os valores são iguais`
+    }
 }
