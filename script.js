@@ -1,118 +1,246 @@
-let inputnota1bim = document.querySelector ("#nota1bim");
-let inputnota2bim = document.querySelector ("#nota2bim");
-let btaprovacao = document.querySelector ("#btaprovacao");
-let h3resultado = document.querySelector ("#h3resultado");
-
-function calcularMediaAluno(){
-
-    //retornando valores dos iinputs e convertendo em numeros
-    let nota1 = Number(inputnota1bim.value);
-    let nota2 = Number(inputnota2bim.value);
-    //calculando a media
-    let media = (nota1 + nota2) / 2;
-
-    //verificar se o aluno está aprovado ou nao
-    if (media >= 60){
-        h3resultado.textContent = `aprovado`;
-    }else{
-        h3resultado.textContent = `reprovado`;
-    }
-}
-btaprovacao.onclick = function(){
-    calcularMediaAluno();
-}
-
-//atividade 1
-let inputvalordolar = document.querySelector ("#valordolar");
+let inputlargura = document.querySelector ("#largura");
+let inputcomprimento = document.querySelector ("#comprimento");
 let btcalcular = document.querySelector ("#btcalcular");
-let cotacao = document.querySelector ("#cotacao");
+let area = document.querySelector ("#area");
 
 btcalcular.onclick = function (){
-    let valordolar = parseFloat(inputvalordolar.value);
+    let largura = Number (inputlargura.value);
+    let comprimento = Number (inputcomprimento.value);
 
-    let calcular1 = valordolar * 0.01;
-    let calcular2 = valordolar * 0.02;
-    let calcular3 = valordolar * 0.05;
-    let calcular4 = valordolar * 0.10;
-
-    let com1porcento = valordolar + calcular1;
-    let com2porcento = valordolar + calcular2;
-    let com5porcento = valordolar + calcular3;
-    let com10porcento = valordolar + calcular4;
-
-    cotacao.innerHTML = 
-    `a cotação do dolar com 1% de aumento é: $${com1porcento.toFixed(2)}<br>` +
-    `a cotação do dolar com 2% de aumento é: $${com2porcento.toFixed(2)} <br>` +
-    `a cotação do dolar com 5% de aumento é: $${com5porcento.toFixed(2)} <br>` +
-    `a cotação do dolar com 10% de aumento é: $${com10porcento.toFixed(2)}`;
+    if (largura > 0 && comprimento > 0) {
+        let resultado = largura * comprimento;
+        area.textContent = `a area do terreno é: ${resultado} m²`;
+    }else {
+        area.textContent = `por favor insira valores validos`;
+    }
 }
 
 //atividade 2
-let inputquantasPessoas = document.querySelector("#quantasPessoas");
-let btsimular = document.querySelector("#btsimular");
-let receita = document.querySelector("#receita");
+let inputcavalos = document.querySelector ("#cavalos");
+let btsimular = document.querySelector ("#btsimular");
+let resultado = document.querySelector ("#resultado");
 
-btsimular.onclick = function(){
-    let quantasPessoas = parseFloat(inputquantasPessoas.value);
+btsimular.onclick = function (){
+    let cavalos = Number (inputcavalos.value);
 
-    let ovos = quantasPessoas * 2;
-    let queijo = quantasPessoas * 0.50;
+    const ferraduras = 4
 
-    receita.innerHTML = `
-    ${Math.round(ovos)} ovos<br>
-    ${Math.round(queijo)} g de queijo`;
+    let necessarias = cavalos * ferraduras;
+
+    resultado.textContent = `para ${cavalos} cavalos são necessárias ${necessarias} ferraduras`;
 }
 
-//atividade 3 
-let inputnumero1 = document.querySelector("#numero1");
-let inputnumero2 = document.querySelector("#numero2");
-let btcalculo = document.querySelector("#btcalculo");
-let resultado = document.querySelector("#resultado");
 
-btcalculo.onclick = function (){
-    let n1 = Number (inputnumero1.value);
-    let n2 = Number (inputnumero2.value);
+//atividade 3
+let inputpaes = document.querySelector ("#paes");
+let inputbroas = document.querySelector ("#broas");
+let btcalcule = document.querySelector ("#btcalcule");
+let arrecadado = document.querySelector ("#arrecadado");
 
-    let somar = (n1 + n2);
-    let subtrair = (n1 - n2);
-    let multiplicar = (n1 * n2);
-    let dividir = (n1 / n2);
+btcalcule.onclick = function (){
+    let p = Number (inputpaes.value);
+    let b = Number (inputbroas.value);
+
+    let paesValor = 0.12
+    let broasValor = 1.50
+
+    let total = (p * paesValor) + (b * broasValor);
+    let poupanca = total * 0.10
+
+    arrecadado.innerHTML = `total arrecadado: R$ ${total.toFixed(2)} <br>
+valor a guardar na poupança (10%): R$ ${poupanca.toFixed(2)}`;
+}
+
+//atividade 4 
+let inputnome = document.querySelector ("#nome");
+let inputidade = document.querySelector ("#idade");
+let btchecar = document.querySelector ("#btchecar");
+let dias = document.querySelector ("#dias");
+
+btchecar.onclick = function (){
+    let nome = inputnome.value;
+    let i = Number (inputidade.value);
+
+    let diasVividos = i * 365
+
+    dias.textContent = `${nome} você já viveu ${diasVividos} dias`;
+}
 
 
-    resultado.innerHTML = `
-    soma = ${n1} + ${n2} = ${somar} <br>
-    substração = ${n1} - ${n2} = ${subtrair} <br>
-    multiplicação = ${n1} . ${2} = ${multiplicar} <br>
-    divisão = ${n1} / ${n2} = ${dividir}
+//atividade 5
+let inputgasolina = document.querySelector ("#gasolina");
+let btabastecer = document.querySelector ("#btabastecer");
+let tanque = document.querySelector ("#tanque");
+
+
+btabastecer.onclick = function (){
+    let g = Number (inputgasolina.value);
+
+    let precog = 6.29
+    let precoFinal = g / precog
+
+    tanque.innerHTML = `o preço do litro da gasolina é R$6.29 (ultima verificação 21/05/2025) <br>
+    você conseguiu abastecer ${precoFinal.toFixed(2)} litros
     `;
 }
 
-//atividade 4
-let inputsabor1 = document.querySelector("#sabor1");
-let inputsabor2 = document.querySelector("#sabor2");
-let inputsabor3 = document.querySelector("#sabor3");
-let inputsabor4 = document.querySelector("#sabor4");
-let inputrefri = document.querySelector("#refri");
-let btpedido = document.querySelector("#btpedido");
-let pedido = document.querySelector("#pedido");
 
-btpedido.onclick = function (){
-    let sabor1 = (inputsabor1.value);
-    let sabor2 = (inputsabor2.value);
-    let sabor3 = (inputsabor3.value);
-    let sabor4 = (inputsabor4.value);
-    let refri = (inputrefri.value);
+//atividade 6
+let inputquilo = document.querySelector ("#quilo");
+let btpesar = document.querySelector ("#btpesar");
+let prato = document.querySelector ("#prato");
 
-    const precoPizza = 12
-    const precoRefri = 7
+btpesar.onclick = function (){
+    let quilo = Number (inputquilo.value);
+    let preco = 12.00
 
-    let totalPrecoPizza = 4 * precoPizza;
-    let totalPrecoRefri = refri * precoRefri;
-    let totalAPagar = totalPrecoPizza + totalPrecoRefri;
+    let notaFiscal = quilo * preco;
 
-    pedido.innerHTML = `
-    Sabores ecolhidos: ${sabor1}, ${sabor2}, ${sabor3} e ${sabor4} <br>
-    Quantidade de refrigerantes: ${refri} <br>
-    Total a pagar: ${totalAPagar.toFixed(2)}
+    prato.innerHTML = `o valor a pagar é R$ ${notaFiscal.toFixed(2)} por ${quilo} kg`;
+}
+
+
+//atividade 7
+let inputdia = document.querySelector ("#dia");
+let inputmes = document.querySelector ("#mes");
+let bttempo = document.querySelector ("#bttempo");
+let result = document.querySelector ("#result");
+
+bttempo.onclick = function () {
+    let dia = Number (inputdia.value);
+    let mes = Number (inputmes.value);
+
+    let diasPassados = (mes - 1) * 30 + dia;
+
+    result.textContent = `ja se passaram ${diasPassados} desde o inicio do ano`;
+}
+
+
+//atividade 8
+let inputpequenas = document.querySelector("#pequenas");
+let inputmedias = document.querySelector("#medias");
+let inputgrandes = document.querySelector("#grandes");
+let btvalor = document.querySelector("#btvalor");
+let informe = document.querySelector("#informe");
+
+btvalor.onclick = function (){
+    let p = Number (inputpequenas.value);
+    let m = Number (inputmedias.value);
+    let g = Number (inputgrandes.value);
+
+    let pValor = 10
+    let mValor= 12
+    let gValor = 15
+
+    let valorArrecadado = (p * 10) + (m * 12) + (g * 15)
+
+    informe.textContent = `o valor arrecadado é R$ ${valorArrecadado.toFixed(2)}`;
+}
+
+
+//atividade 9
+let inputx1 = document.querySelector ("#x1");
+let inputy1 = document.querySelector ("#y1");
+let inputx2 = document.querySelector ("#x2");
+let inputy2 = document.querySelector ("#y2");
+let btdistancia = document.querySelector ("#btdistancia");
+let resulted = document.querySelector ("#resulted");
+
+btdistancia.onclick = function (){
+    let x1 = Number (inputx1.value);
+    let y1 = Number (inputy1.value);
+    let x2 = Number (inputx2.value);
+    let y2 = Number (inputy2.value);
+
+    let distancia = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1,2));
+
+    resulted.innerHTML = `A distância é: ${distancia.toFixed(2)}`;
+}
+
+//atividade 10
+const inputdias = document.querySelector("#diasAcidente");
+        const btdays = document.querySelector("#btdays");
+        const days = document.querySelector("#resultadoAcidente");
+
+        btdays.onclick = function () {
+            const dias = Number(inputdias.value);
+            console.log("Valor digitado:", inputdias.value); // debug
+
+            if (isNaN(dias)) {
+                days.textContent = "Por favor, insira um número válido.";
+                return;
+            }
+
+            const ano = Math.floor(dias / 365);
+            const restoAno = dias % 365;
+
+            const mes = Math.floor(restoAno / 30);
+            const dia = restoAno % 30;
+
+            days.innerHTML = `${ano} ano(s), ${mes} mes(es), ${dia} dia(s)`;
+        };
+
+//atividade 11
+let inputsalarioInicial = document.querySelector ("#salarioInicial");
+let btsalario = document.querySelector ("#btsalario");
+let resultadoSalario = document.querySelector ("#resultadoSalario");
+
+btsalario.onclick = function (){
+    let salario = Number (inputsalarioInicial.value);
+
+    let aumento = 0.15
+    let imposto = 0.08
+
+    let salarioBruto = salario + (salario * aumento);
+    let salarioLiquido = salario - (salarioBruto * imposto);
+
+    resultadoSalario.innerHTML = `seu salario inicial é R$${salario.toFixed(2)} <br> com o aumento R$${salarioBruto.toFixed(2)} <br> seu salario final ja com descontos é R$${salarioLiquido.toFixed(2)}`;
+}
+
+//atividade 12
+let inputnumero = document.querySelector ("#numero");
+let btseparar = document.querySelector ("#btseparar");
+let separacao = document.querySelector ("#separacao");
+
+btseparar.onclick = function (){
+    let numero = Number(inputnumero.value);
+
+    let centena = Math.floor(numero / 100);
+    let dezena = Math.floor((numero % 100) / 10);
+    let unidade = numero % 10;
+
+    separacao.innerHTML = `centenas = ${centena} <br> dezenas = ${dezena} <br> unidades = ${unidade}`;
+}
+
+//atividade 13
+let inputraio = document.querySelector ("#raio");
+let btcalcularPizza = document.querySelector ("#btcalcularPizza");
+let resultadoPizza = document.querySelector ("#resultadoPizza");
+
+btcalcularPizza.onclick = function (){
+    let raio = Number(inputraio.value);
+    let pi = 3.14;
+    let area = pi * raio * raio;
+
+    resultadoPizza.innerHTML = `a area da pizza com raio ${raio} é ${area.toFixed(2)}`;
+}
+
+//atividade 14
+let inputvalores = document.querySelector ("#valores");
+let btcalcularConta = document.querySelector ("#btcalcularConta");
+let resultadoconta = document.querySelector ("#resultadoconta");
+
+btcalcularConta.onclick = function (){
+    let valores = Number (inputvalores.value);
+
+    let parte = valores / 3;
+    let Carlos = Math.floor(parte);
+    let Andre = Math.floor(parte);
+    let Felipe = (valores - Carlos - Andre);
+
+    resultadoconta.innerHTML =`
+        Carlos paga: R$ ${Carlos.toFixed(2)} <br>
+        André paga: R$ ${Andre.toFixed(2)} <br>
+        Felipe paga: R$ ${Felipe.toFixed(2)}
     `;
 }
