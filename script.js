@@ -1,246 +1,265 @@
-let inputlargura = document.querySelector ("#largura");
-let inputcomprimento = document.querySelector ("#comprimento");
+let inputvalorx = document.querySelector ("#valorx");
+let inputvalory = document.querySelector ("#valory");
+let inputvalorz = document.querySelector ("#valorz");
 let btcalcular = document.querySelector ("#btcalcular");
-let area = document.querySelector ("#area");
-
-btcalcular.onclick = function (){
-    let largura = Number (inputlargura.value);
-    let comprimento = Number (inputcomprimento.value);
-
-    if (largura > 0 && comprimento > 0) {
-        let resultado = largura * comprimento;
-        area.textContent = `a area do terreno é: ${resultado} m²`;
-    }else {
-        area.textContent = `por favor insira valores validos`;
-    }
-}
-
-//atividade 2
-let inputcavalos = document.querySelector ("#cavalos");
-let btsimular = document.querySelector ("#btsimular");
 let resultado = document.querySelector ("#resultado");
 
-btsimular.onclick = function (){
-    let cavalos = Number (inputcavalos.value);
+btcalcular.onclick = function (){
+    let x = Number (inputvalorx.value);
+    let y = Number (inputvalory.value);
+    let z = Number (inputvalorz.value);
 
-    const ferraduras = 4
-
-    let necessarias = cavalos * ferraduras;
-
-    resultado.textContent = `para ${cavalos} cavalos são necessárias ${necessarias} ferraduras`;
-}
-
-
-//atividade 3
-let inputpaes = document.querySelector ("#paes");
-let inputbroas = document.querySelector ("#broas");
-let btcalcule = document.querySelector ("#btcalcule");
-let arrecadado = document.querySelector ("#arrecadado");
-
-btcalcule.onclick = function (){
-    let p = Number (inputpaes.value);
-    let b = Number (inputbroas.value);
-
-    let paesValor = 0.12
-    let broasValor = 1.50
-
-    let total = (p * paesValor) + (b * broasValor);
-    let poupanca = total * 0.10
-
-    arrecadado.innerHTML = `total arrecadado: R$ ${total.toFixed(2)} <br>
-valor a guardar na poupança (10%): R$ ${poupanca.toFixed(2)}`;
-}
-
-//atividade 4 
-let inputnome = document.querySelector ("#nome");
-let inputidade = document.querySelector ("#idade");
-let btchecar = document.querySelector ("#btchecar");
-let dias = document.querySelector ("#dias");
-
-btchecar.onclick = function (){
-    let nome = inputnome.value;
-    let i = Number (inputidade.value);
-
-    let diasVividos = i * 365
-
-    dias.textContent = `${nome} você já viveu ${diasVividos} dias`;
-}
+    if (x < y + z && y < x + z && z < x + y) {
+        if (x === y && y === z) {
+            resultado.textContent = `Equiláteros: tem os comprimentos dos três lados iguais`;
+        } else if (x === y || y === z || x === z) {
+            resultado.textContent = `Isósceles: tem os comprimentos de dois lados iguais`;
+        } else {
+            resultado.textContent = `Escaleno: tem os comprimentos de três lados diferentes`;
+        }
+    } else {
+        resultado.textContent = `Os valores informados não formam um triângulo.`;
+        }
+    };
 
 
-//atividade 5
-let inputgasolina = document.querySelector ("#gasolina");
-let btabastecer = document.querySelector ("#btabastecer");
-let tanque = document.querySelector ("#tanque");
-
-
-btabastecer.onclick = function (){
-    let g = Number (inputgasolina.value);
-
-    let precog = 6.29
-    let precoFinal = g / precog
-
-    tanque.innerHTML = `o preço do litro da gasolina é R$6.29 (ultima verificação 21/05/2025) <br>
-    você conseguiu abastecer ${precoFinal.toFixed(2)} litros
-    `;
-}
-
-
-//atividade 6
-let inputquilo = document.querySelector ("#quilo");
-let btpesar = document.querySelector ("#btpesar");
-let prato = document.querySelector ("#prato");
-
-btpesar.onclick = function (){
-    let quilo = Number (inputquilo.value);
-    let preco = 12.00
-
-    let notaFiscal = quilo * preco;
-
-    prato.innerHTML = `o valor a pagar é R$ ${notaFiscal.toFixed(2)} por ${quilo} kg`;
-}
-
-
-//atividade 7
-let inputdia = document.querySelector ("#dia");
-let inputmes = document.querySelector ("#mes");
-let bttempo = document.querySelector ("#bttempo");
+//atividade 2
+let inputaltura = document.querySelector ("#altura");
+let inputpeso = document.querySelector ("#peso");
+let btcalculo = document.querySelector ("#btcalculo");
 let result = document.querySelector ("#result");
 
-bttempo.onclick = function () {
-    let dia = Number (inputdia.value);
-    let mes = Number (inputmes.value);
+btcalculo.onclick = function (){
+   let altura = Number (inputaltura.value);
+   let peso = Number (inputpeso.value);
 
-    let diasPassados = (mes - 1) * 30 + dia;
+       if (altura <= 0 || peso <= 0) {
+        result.innerHTML = "Por favor, insira valores válidos para altura e peso.";
+        return;
+    }
 
-    result.textContent = `ja se passaram ${diasPassados} desde o inicio do ano`;
+   let imc = peso / (altura * altura);
+      let classificacao = "";
+
+    if (imc < 18.5) {
+        classificacao = "Abaixo do peso";
+    } else if (imc < 25) {
+        classificacao = "Peso normal";
+    } else if (imc < 30) {
+        classificacao = "Sobrepeso";
+    } else if (imc < 35) {
+        classificacao = "Obesidade grau 1";
+    } else if (imc < 40) {
+        classificacao = "Obesidade grau 2";
+    } else {
+        classificacao = "Obesidade grau 3";
+    }
+
+    result.innerHTML = `<h4> seu imc é ${imc.toFixed(2)} — ${classificacao}<h4> <br> <br> <br>
+     Abaixo de 18.5 → Abaixo do peso <br>
+     18.5 a 24.9 → Peso normal <br>
+     25 a 29.9 → Sobrepeso <br>
+     30 a 34.9 → Obesidade grau 1 <br>
+     35 a 39.9 → Obesidade grau 2 <br>
+     40+ → Obesidade grau 3.` 
 }
 
+
+//atividade 3 
+let inputano = document.querySelector ("#ano");
+let inputvalorcarro = document.querySelector ("#valorcarro");
+let btimposto = document.querySelector ("#btimposto");
+let impost = document.querySelector ("#impost");
+
+btimposto.onclick = function () {
+    ano = Number (inputano.value);
+    valorcarro = Number (inputvalorcarro.value);
+
+    let taxa = 0
+
+    if (ano < 1990) {
+        taxa = 0.01;
+    } else {
+        taxa = 0.15;
+    }
+
+    let imposto = valorcarro * taxa;
+
+    impost.textContent =`o imposto a pagar é: R$ ${imposto.toFixed(2)} (${(taxa * 100).toFixed(1)}%)`;
+}
+
+//atividade 4
+let inputsalario = document.querySelector ("#salario");
+let inputcargo = document.querySelector("#cargo");
+let btsalario = document.querySelector("#btsalario");
+let gerador = document.querySelector("#gerador");
+
+btsalario.onclick = function(){
+    let salario = Number(inputsalario.value);
+    let cargo = inputcargo.value.trim().toLowerCase();
+
+    if (salario <= 0 || cargo === ""){
+        gerador.innerHTML = `por favor, preencha corretamente o salario e o cargo`;
+        return;
+    }
+    
+    let percentual = 0;
+
+    if (cargo === "gerente") {
+        percentual = 0.10;
+    } else if (cargo === "engenheiro") {
+        percentual = 0.20;
+    }else if (cargo === "tecnico") {
+        percentual = 0.30;
+    } else {
+        percentual = 0.40;
+    }
+    
+    let aumento = salario * percentual;
+    let novoSalario = salario + aumento;
+
+    gerador.innerHTML = `${cargo.charAt(0).toUpperCase() + cargo.slice(1)} <br>
+    salario antigo: R$ ${salario.toFixed(2)}<br>
+    novo salario: R$ ${novoSalario.toFixed(2)}<br>
+    aumento: R$ ${aumento.toFixed(2)} (${(percentual * 100)}%)
+    `;
+}
+
+//atividade 5
+let inputsaldoMedio = document.querySelector ("#saldoMedio");
+let btsaldo = document.querySelector ("#btsaldo");
+let creditario = document.querySelector("#creditario");
+
+btsaldo.onclick = function(){
+    let saldoMedio = Number(inputsaldoMedio.value);
+    let porcent = 0;
+
+    if (saldoMedio < 0){
+        creditario.innerHTML = `saldo invalido`;
+        return;
+    }
+
+    if (saldoMedio <= 200){
+        porcent = 0;
+    } else if (saldoMedio <= 400) {
+        porcent = 0.20;
+    } else if (saldoMedio <= 600){
+        porcent = 0.30;
+    } else {
+        porcent = 0.40
+    }
+    
+    let credito = saldoMedio * porcent;
+
+    creditario.innerHTML = `saldo medio: R$${credito.toFixed(2)} (${porcent * 100}%)`;
+}
+
+//atividade 6
+let inputprodutos = document.querySelector ("#inputprodutos");
+let inputquantidade = document.querySelector ("#quantidade");
+let btgere = document.querySelector ("#btgere");
+let geradot = document.querySelector ("#geradot")
+
+btgere.onclick = function (){
+    let produto = inputprodutos.value.trim().toLowerCase();
+    let quantidade = Number(inputquantidade.value);
+    let preco = 0;
+
+    if (produto === "cachorro quente") {
+        preco = 11.00;
+    } else if (produto === "bauru") {
+        preco = 8.50;
+    } else if ( produto === "misto quente") {
+        preco = 8.00;
+    } else if (produto === "hamburguer") {
+        preco = 9.00;
+    } else if (produto === "cheeseburguer") {
+        preco = 10.00;
+    } else if (produto === "refrigerante") {
+        preco = 4.50
+    } else {
+        geradot.innerHTML = `produto invalido`;
+        return;
+    }
+    
+    if (quantidade <= 0){
+        geradot.innerHTML = `por favor digite uma quantidade valida`;
+        return;
+    }
+
+    let total = preco * quantidade;
+
+    geradot.innerHTML = `produto: ${produto.charAt(0).toUpperCase() + produto.slice(1)}<br>
+    quantidade: ${quantidade}<br>
+    total a pagar: R$${total.toFixed(2)}`;
+}
+
+//atividade 7
+let inputtributo = document.querySelector ("#tributo");
+let selectcondicao = document.querySelector("#condicao");
+let btcalc = document.querySelector ("#btcalc");
+let valorNota = document.querySelector ("#valorNota");
+
+btcalc.onclick = function (){
+    let tributo = Number(inputtributo.value);
+    let condicao = selectcondicao.value;
+
+    if (tributo <= 0 || condicao === "") {
+        valorNota.innerHTML = `preencha o preço e escolha uma condiçao de pagamento`;
+        return;
+    }
+
+    let final = tributo;
+    let info = "";
+
+    if (condicao === "a") {
+        final = tributo * 0.90;
+        info = "10% de desconto (à vista em dinheiro ou cheque)";
+    } else if (condicao === "b") {
+        final = tributo * 0.85;
+        info = "15% de desconto (à vista no cartão)";
+    } else if (condicao === "c") {
+        final = tributo;
+        info = "2x sem juros";
+    } else if (condicao === "d") {
+        final = tributo * 1.10;
+        info = "10% de juros (2x com juros)";
+    }
+
+    valorNota.innerHTML = `preço original: R$${tributo.toFixed(2)}<br>
+    condição: ${info}<br>
+    total a pagar: R$${final.toFixed(2)}`;
+}
 
 //atividade 8
-let inputpequenas = document.querySelector("#pequenas");
-let inputmedias = document.querySelector("#medias");
-let inputgrandes = document.querySelector("#grandes");
-let btvalor = document.querySelector("#btvalor");
-let informe = document.querySelector("#informe");
+let inputnivel = document.querySelector("#nivel");
+let inputhoras = document.querySelector("#horas");
+let btnotaprof = document.querySelector("#btnotaprof");
+let notad = document.querySelector("#notad");
 
-btvalor.onclick = function (){
-    let p = Number (inputpequenas.value);
-    let m = Number (inputmedias.value);
-    let g = Number (inputgrandes.value);
+btnotaprof.onclick = function (){
+    let nivel = Number(inputnivel.value);
+    let horas = Number(inputhoras.value);
 
-    let pValor = 10
-    let mValor= 12
-    let gValor = 15
+    if ((nivel < 1 || nivel > 3) || horas <= 0) {
+        notad.innerHTML = `Preencha corretamente o nível (1 a 3) e a quantidade de horas.`;
+        return;
+    }
 
-    let valorArrecadado = (p * 10) + (m * 12) + (g * 15)
+    let valorHora = 0;
 
-    informe.textContent = `o valor arrecadado é R$ ${valorArrecadado.toFixed(2)}`;
-}
+    if (nivel === 1) {
+        valorHora = 12;
+    } else if (nivel === 2) {
+        valorHora = 17;
+    } else if (nivel === 3) {
+        valorHora = 25;
+    }
 
+    let salarioprof = valorHora * horas * 4.5;
 
-//atividade 9
-let inputx1 = document.querySelector ("#x1");
-let inputy1 = document.querySelector ("#y1");
-let inputx2 = document.querySelector ("#x2");
-let inputy2 = document.querySelector ("#y2");
-let btdistancia = document.querySelector ("#btdistancia");
-let resulted = document.querySelector ("#resulted");
-
-btdistancia.onclick = function (){
-    let x1 = Number (inputx1.value);
-    let y1 = Number (inputy1.value);
-    let x2 = Number (inputx2.value);
-    let y2 = Number (inputy2.value);
-
-    let distancia = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1,2));
-
-    resulted.innerHTML = `A distância é: ${distancia.toFixed(2)}`;
-}
-
-//atividade 10
-const inputdias = document.querySelector("#diasAcidente");
-        const btdays = document.querySelector("#btdays");
-        const days = document.querySelector("#resultadoAcidente");
-
-        btdays.onclick = function () {
-            const dias = Number(inputdias.value);
-            console.log("Valor digitado:", inputdias.value); // debug
-
-            if (isNaN(dias)) {
-                days.textContent = "Por favor, insira um número válido.";
-                return;
-            }
-
-            const ano = Math.floor(dias / 365);
-            const restoAno = dias % 365;
-
-            const mes = Math.floor(restoAno / 30);
-            const dia = restoAno % 30;
-
-            days.innerHTML = `${ano} ano(s), ${mes} mes(es), ${dia} dia(s)`;
-        };
-
-//atividade 11
-let inputsalarioInicial = document.querySelector ("#salarioInicial");
-let btsalario = document.querySelector ("#btsalario");
-let resultadoSalario = document.querySelector ("#resultadoSalario");
-
-btsalario.onclick = function (){
-    let salario = Number (inputsalarioInicial.value);
-
-    let aumento = 0.15
-    let imposto = 0.08
-
-    let salarioBruto = salario + (salario * aumento);
-    let salarioLiquido = salario - (salarioBruto * imposto);
-
-    resultadoSalario.innerHTML = `seu salario inicial é R$${salario.toFixed(2)} <br> com o aumento R$${salarioBruto.toFixed(2)} <br> seu salario final ja com descontos é R$${salarioLiquido.toFixed(2)}`;
-}
-
-//atividade 12
-let inputnumero = document.querySelector ("#numero");
-let btseparar = document.querySelector ("#btseparar");
-let separacao = document.querySelector ("#separacao");
-
-btseparar.onclick = function (){
-    let numero = Number(inputnumero.value);
-
-    let centena = Math.floor(numero / 100);
-    let dezena = Math.floor((numero % 100) / 10);
-    let unidade = numero % 10;
-
-    separacao.innerHTML = `centenas = ${centena} <br> dezenas = ${dezena} <br> unidades = ${unidade}`;
-}
-
-//atividade 13
-let inputraio = document.querySelector ("#raio");
-let btcalcularPizza = document.querySelector ("#btcalcularPizza");
-let resultadoPizza = document.querySelector ("#resultadoPizza");
-
-btcalcularPizza.onclick = function (){
-    let raio = Number(inputraio.value);
-    let pi = 3.14;
-    let area = pi * raio * raio;
-
-    resultadoPizza.innerHTML = `a area da pizza com raio ${raio} é ${area.toFixed(2)}`;
-}
-
-//atividade 14
-let inputvalores = document.querySelector ("#valores");
-let btcalcularConta = document.querySelector ("#btcalcularConta");
-let resultadoconta = document.querySelector ("#resultadoconta");
-
-btcalcularConta.onclick = function (){
-    let valores = Number (inputvalores.value);
-
-    let parte = valores / 3;
-    let Carlos = Math.floor(parte);
-    let Andre = Math.floor(parte);
-    let Felipe = (valores - Carlos - Andre);
-
-    resultadoconta.innerHTML =`
-        Carlos paga: R$ ${Carlos.toFixed(2)} <br>
-        André paga: R$ ${Andre.toFixed(2)} <br>
-        Felipe paga: R$ ${Felipe.toFixed(2)}
-    `;
+    notad.innerHTML = `nivel: ${nivel}<br>
+    valor por hora/aula: R$${valorHora.toFixed(2)}<br>
+    total de horas por semana: ${horas}
+    salario mensal: <strong>R$${salarioprof.toFixed(2)}</strong>`;
 }

@@ -1,0 +1,80 @@
+/* estilo geral */
+body {
+    cursor: url("./tumblr_m35ldt3B3X1rnr4eb.png"),auto;
+    background-color: #ffe8f9;
+   
+    color: #8b5e39;
+    margin: 0;
+    padding: 0;
+}
+
+/* todos os blocos */
+div {
+    cursor: url("./tumblr_m35ldt3B3X1rnr4eb.png"), auto;
+    background-color: #fff5fa;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 8px 16px rgba(139, 94, 57, 0.2);   
+}
+
+.triangulo {
+    cursor: url("./tumblr_m35ldt3B3X1rnr4eb.png"), auto;
+    background-color: #fff5fa;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 8px 16px rgba(139, 94, 57, 0.2);   
+}
+
+/* títulos */
+h1 {
+    cursor: url("./tumblr_m35ldt3B3X1rnr4eb.png"), auto;
+    color: #a75d84;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* campos de entrada */
+input, select {
+    cursor: url("./tumblr_m35ldt3B3X1rnr4eb.png"), auto;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid #dab2c7;
+    width: 80%;
+    font-size: 14px;
+    background-color: #fff;
+    color: #5c3a2e;
+}
+
+/* botões */
+button {
+    cursor: url("./tumblr_m35ldt3B3X1rnr4eb.png"), auto;
+    background-color: #f7b8d3;
+    color: #5c3a2e;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    cursor: url("./tumblr_m35ldt3B3X1rnr4eb.png"), auto;
+    background-color: #f390c0;
+}
+
+/* resultados */
+p {
+    cursor: url("./tumblr_m35ldt3B3X1rnr4eb.png"), auto;
+    font-size: 16px;
+    margin-top: 12px;
+    color: #4c2e25;
+}

@@ -2,110 +2,105 @@
     <head>
         <meta charset="UTF-8">
         <title>exercicio 3</title>
+        <link rel="stylesheet" href="style.css">
     </head>
-    <body style="background-color: rgb(255, 232, 249); color: rgb(139, 94, 57);">
-        <div class="imobiliaria" align="center">
-            <h1 id="h1Texto">ler dimensões do terreno</h1>
-            <label for="largura">l</label>
-            <input id="largura" type="number"> <br>
-            <label for="comprimento">m</label>
-            <input id="comprimento" type="number"> <br>
-            <button id="btcalcular">calcular terreno</button>
-            <p id="area" style="color: plum;"></p>
+    <body>
+    <br>  <br>
+    <div>
+        <div class="triangulo" align="center">
+            <h1 id="h1Texto">encontre o triangulo</h1>
+            <label for="valorx">x</label>
+            <input id="valorx" type="number"> <br>
+            <label for="valory">y</label>
+            <input id="valory" type="number"> <br>
+            <label for="valorz">z</label>
+            <input id="valorz" type="number"> <br>
+            <button id="btcalcular">descobrir</button>
+            <p id="resultado" style="color: rgb(15, 14, 15);"></p>
         </div>
-    <br> <hr> <br>
-            <div class="ferraduras" align="center">
-            <h1>ferraduras necessárias</h1>
-            <input id="cavalos" type="number"> <br>
-            <button id="btsimular">simular</button>
-            <p id="resultado" style="color: plum;"></p>
-    <br> <hr> <br>
-            <div class="padaria" align="center">
-            <h1>Padaria Hotpão</h1>
-            <label for="paes">pães</label>
-            <input id="paes" type="number"> <br>
-            <label for="broas">broas</label>
-            <input id="broas" type="number"> <br>
-            <button id="btcalcule">simular</button>
-            <p id="arrecadado" style="color: plum;"></p>
-    <br> <hr> <br>
-            <div class="idade" align="center">
-            <h1>dias vividos</h1>
-            <input id="nome" type="text" placeholder="nome">
-            <input id="idade" type="number" placeholder="idade">
-            <button id="btchecar">checar</button>
-            <p id="dias" style="color: plum;"></p>
-    <br> <hr> <br>
-            <div class="gasolina" align="center">
-            <h1>gasolina</h1>
-            <input id="gasolina" type="number" placeholder="valor">
-            <button id="btabastecer">abastecer</button>
-            <p id="tanque" style="color: plum;"></p>
-    <br> <hr> <br>
-            <div class="restaurante" align="center">
-            <h1>Restaurante Bem-Bão</h1>
-            <h4>R$12,00 por cada quilo de refeição</h4>
-            <input id="quilo" type="number" placeholder="kg">
-            <button id="btpesar">pesar</button>
-            <p id="prato" style="color: plum;"></p>
-    <br> <hr> <br>
-            <div class="diasA" align="center">
-            <h1>data</h1>
-            <input id="dia" type="number" placeholder="dia">
-            <input id="mes" type="number" placeholder="mês">
-            <button id="bttempo">descobrir</button>
-            <p id="result" style="color: plum;"></p>
-            </div>
-        <br> <hr> <br>
-            <div class="loja" align="center">
-            <h1>fabrica de camisetas</h1>
-            <input id="pequenas" type="number" placeholder="pequenas - R$10,00"> <br>
-            <input id="medias" type="number" placeholder="medias - R$12,00"> <br>
-            <input id="grandes" type="number" placeholder="grandes - R$15,00"> <br>
-            <button id="btvalor">valor arrecadado</button>
-            <p id="informe" style="color: plum;"></p>
-            </div>
-        <br> <hr> <br>
-            <div class="cartesiano" align="center">
-            <h1>plano cartesiano</h1>
-            <input id="x1" type="number" placeholder="x₁"> <br>
-            <input id="y1" type="number" placeholder="y₁"> <br>
-            <input id="x2" type="number" placeholder="x₂"> <br>
-            <input id="y2" type="number" placeholder="y₂"> <br>
-            <button id="btdistancia">calcular distância</button>
-            <p id="resulted" style="color: plum;"></p>
-            </div>
-        <br> <hr> <br>
-            <div class="trabalho" align="center">
-            <h1>tempo sem acidentes</h1>
-            <input id="diasAcidente" type="number" placeholder="dias sem acidente">
-            <button id="btdays">converter</button>
-            <p id="resultadoAcidente" style="color: plum;"></p>
-        <br> <hr> <br>
-            <div class="salary" align="center">
-            <h1>salario</h1>
-            <h4>+15% de aumento <br> -8% de impostos</h4>
-            <input id="salarioInicial" type="number" placeholder="salário">
-            <button id="btsalario">calcular</button>
-            <p id="resultadoSalario" style="color: plum;"></p>
-        <br> <hr> <br>
-            <div class="inteiro" align="center">
-            <h1>unidades simples</h1>
-            <h4>digite um numero de ate 3 digitos</h4>
-            <input id="numero" type="number">
-            <button id="btseparar">separar</button>
-            <p id="separacao" style="color: plum;"></p>  
-        <br> <hr> <br>
-            <div class="pizzaRaio" align="center">
-            <h1>area da pizza</h1>
-            <input id="raio" type="number">
-            <button id="btcalcularPizza">calcular area</button>
-            <p id="resultadoPizza" style="color: plum;"></p>    
-        <br> <hr> <br>
-            <div class="conta" align="center">
-            <h1>notinha fiscal</h1>
-            <input id="valores" type="number" placeholder="valor da conta">
-            <button id="btcalcularConta">pagar</button>
-            <p id="resultadoconta" style="color: plum;"></p>         
+        
+    <br>  <br>
+    <div class="calculadora" align="center">
+            <h1>calculadora de imc</h1>
+            <input id="altura" type="number" placeholder="altura"> <br>
+            <input id="peso" type="number" placeholder="peso"> <br>
+            <button id="btcalculo">calcular</button>
+            <p id="result" style="color: rgb(15, 14, 15);"></p>
+    </div>
+
+    <br>  <br>
+    <div class="imposto" align="center">
+        <h1>calculadora de impostos</h1>
+        <input id="ano" type="number" placeholder="ano do carro"><br><br>
+        <input id="valorcarro" type="number" placeholder="valor de tabela"><br><br>
+        <button id="btimposto">calcular</button>
+        <p id="impost" style="color: rgb(15, 14, 15);"></p>
+    </div>
+    
+    <br>  <br>
+    <div class="salary" align="center">
+        <h1>calculadora de salarios</h1>
+        <input id="salario" type="number" placeholder="salario"><br>
+        <select id="cargo">
+            <option value="">selecione o cargo</option>
+            <option value="gerente">gerente</option>
+            <option value="engenheiro">engenheiro</option>
+            <option value="tecnico">tecnico</option>
+            <option value="outros">outros</option>
+        </select><br>
+        <button id="btsalario">gerar</button>
+        <p id="gerador" style="color: rgb(15, 14, 15);"></p>
+        </div>
+
+    <br> <br>
+    <div class="credito" align="center">
+        <h1>calculadora de credito bancario</h1>
+        <input id="saldoMedio" type="number" placeholder="saldo medio"><br>
+        <button id="btsaldo">calcular</button>
+        <p id="creditario" style="color: rgb(15, 14, 15);"></p>
+        </div>
+    
+    <br><br>
+    <div class="lanchonete" align="center">
+        <h1>lanchonete</h1>
+        <input list="produtos" id="inputprodutos" type="text" placeholder="alimentos">
+        <datalist id="produtos">
+            <option value="cachorro quente">
+            <option value="bauru">
+            <option value="misto quente">
+            <option value="hamburguer">
+            <option value="cheeseburguer">
+            <option value="refrigerante">
+        </datalist><br>
+        <input id="quantidade" type="number" placeholder="quantidade"><br>
+        <button id="btgere">gerar pedido</button>
+        <p id="geradot" style="color: rgb(15, 14, 15);"></p>
+        </div>
+            
+    <br>  <br>
+    <div class="vendas" align="center">
+        <h1>sistema de vendas</h1>
+        <input id="tributo" type="number" placeholder="preço do produto"><br>
+        <select id="condicao">
+            <option value="">selecione a condiçao de pagamento</option>
+            <option value="a">À vista (dinheiro/cheque) - 10% desconto</option>
+            <option value="b">À vista (cartão) - 15% desconto</option>
+            <option value="c">2x sem juros</option>
+            <option value="d">2x com 10% de juros</option>
+        </select>
+        <br><br>
+        <button id="btcalc">calcular</button>
+        <p id="valorNota" style="color: rgb(15, 14, 15);"></p>
+        </div>
+    
+    <br>  <br>
+    <div class="passagens" align="center">
+        <h1>sistema pagamento</h1>
+        <input id="nivel" type="number" placeholder="nivel do professor (1 a 3)" min="'" max="3"><br> <br>
+        <input id="horas" type="number" placeholder="horas/aula por semana"><br><br>
+        <button id="btnotaprof">calcular salario</button>
+        <p id="notad" style="color: rgb(15, 14, 15);"></p>
+    </div>
+</div>
         <script src="script.js"></script>
     </body>
